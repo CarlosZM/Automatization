@@ -1,0 +1,47 @@
+Project Name:,WordPress Site,,,,
+Module Name:,Users,,,,
+Documentation:,-,,,,
+Created By:,Carlos Alejandro Zerga Morales,,,,
+Date of Creation:,28/06/2017,,,,
+Date of Revision:,28/06/2017,,,,
+Test Suite Code:,WPS_U,,,,
+Test Case ID,Summary,Pre-Condition,Test Steps,Expected Result,Priority
+WPS_U_01,Fail creating a user with an existing data,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- left menu should not be collapsed
+- user must exist","1.-Click button ""Users"" inside left menu list
+2.- Click button ""Add New"" inside page content
+3.- Fill ""admin"" inside ""username field
+4.- Fill ""demo123"" inside ""password"" field
+5.- Fill ""demo123"" inside ""retype password"" field
+6.- Fill ""sysop@opensourcecms.com"" inside ""email field
+4.- Click on button ""Add New User""","1.- Verify that a block has been appeared with color #ffebe8
+2.- Verify that block contains a text like ""ERROR: This username is already registered. Please choose another one.""
+3.- Verify that block contains a text like ""ERROR: This email is already registered, please choose another one.""
+4.- Verify that user list label amount users has no increased its value in 1",PASS
+WPS_U_02,Change strength indicator look by entering a very weak password,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- left menu should not be collapsed","1.-Click button ""Users"" inside left menu list
+2.- Click button ""Add New"" inside page content
+3.- Fill ""texto"" inside ""password"" field
+4.- Click on button ""Add New User""","1.- Verify value of ""#ffa0a0"" in  background block color ""Strength Indicator""
+2.- Verify value of ""Very Weak"" on block ""Strength Indicator"" ",PASS
+WPS_U_03,Change strength indicator look by entering a weak password,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- left menu should not be collapsed","1.-Click button ""Users"" inside left menu list
+2.- Click button ""Add New"" inside page content
+3.- Fill ""123abcd"" inside ""password"" field","1.- Verify value of ""#ffb78c"" in  background block color ""Strength Indicator""
+2.- Verify value of ""Weak"" on block ""Strength Indicator"" ",PASS
+WPS_U_04,Change strength indicator look by entering a medium password,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- left menu should not be collapsed","1.-Click button ""Users"" inside left menu list
+2.- Click button ""Add New"" inside page content
+3.- Fill ""abcd1234"" inside ""password"" field
+4.- Click on button ""Add New User""","1.- Verify value of ""#ffec8b"" in  background block color ""Strength Indicator""
+2.- Verify value of ""Medium"" on block ""Strength Indicator"" ",PASS
+WPS_U_05,Change strength indicator look by entering a strong password,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- left menu should not be collapsed","1.-Click button ""Users"" inside left menu list
+2.- Click button ""Add New"" inside page content
+3.- Fill ""Mensaje2017"" inside ""password"" field","1.- Verify value of ""#c3ff88"" in  background block color ""Strength Indicator""
+2.- Verify value of ""Strong"" on block ""Strength Indicator"" ",PASS

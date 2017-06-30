@@ -142,6 +142,6 @@ public class PostTestCase {
 
     @After
     public void tearDown() throws Exception {
-        //this.webDriver.quit();
+        this.webDriver.quit();
     }
 }
