@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test.entity.User;
 
 /**
  * Created by carlos on 6/24/17.
@@ -53,6 +54,15 @@ public class LoginObjectPage {
         this.typeUserName(userName);
         this.typePassword(password);
         this.sendCredentials();
+        this.waitForLoginRedirect();
+    }
+
+    public void authenticateUser(User user)
+    {
+        this.typeUserName(user.getUserName());
+        this.typePassword(user.getPassword());
+        this.sendCredentials();
+        this.waitForLoginRedirect();
     }
 
     public void waitForLoginRedirect()

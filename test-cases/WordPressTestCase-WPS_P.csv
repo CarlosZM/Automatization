@@ -1,0 +1,66 @@
+Project Name:,WordPress Site,,,,
+Module Name:,Posts,,,,
+Documentation:,-,,,,
+Created By:,Carlos Alejandro Zerga Morales,,,,
+Date of Creation:,28/06/2017,,,,
+Date of Revision:,28/06/2017,,,,
+Test Suite Code:,WPS_P,,,,
+Test Case ID,Summary,Pre-Condition,Test Steps,Expected Result,Status
+WPS_P_01,Create a category with valid values,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- category with the given values should not exist
+- left menu should not be collapsed
+- all screen options should be enabled
+- test process should be the only one being executed ","1.-Hover button ""Posts"" inside left menu list
+2.- Click button ""Categories"" inside left menu list
+3.- Fill""Test"" insdie ""name"" field
+4.- Fill ""test"" inside ""slug"" field
+5.- Fill ""This is a category called test"" inside ""description"" field
+6.- Click on ""Add New Category"" button","1.- Verify value ""${amount_categories} items"" keep with same value before and after category creation 
+2.- Verify value ""Test"" on first field of column ""name""
+3.- Verify value ""test"" on first field of column ""slug""
+3.- Verify value ""This is a category called test"" on first field of column ""description""
+4.- Verify value ""0"" on first field of column ""posts""
+",PASS
+WPS_P_02,Create a draft post with valid values,"- user must be logged as ""admin""
+- categories to select should be already created
+- user must be located at main dashboard page
+- post with the given values should not exist
+- left menu should not be collapsed
+- all screen options should be enabled","1.-Hover button ""Posts"" inside left menu list
+2.- Click button ""Add New"" inside left menu
+3.- Fill""This is a draft post for only test propouse"" insdie ""title"" field
+4.- Fill ""This is a normal draft post for testing"" inside ""content"" field
+5.- Select values of ""Test"", ""Posting"" and  ""Wordpress"" from list ""category""
+6.- Click on ""Save Draft"" button","1.- Verify that a block has been appeared with color #ffffe0
+2.- Verify that block contains a text like ""Post draft updated""
+3.- Verify value of ""This is a draft post for only test propouse"" on label ""title"" inside page that shows draft post preview
+4.- Verify value of ""This is a normal draft post for testing"""" on label ""contetn"" inside page that shows draft post preview
+5.- Verify value of ""admin"" on label creator inside page that shows draft post preview
+6.- Verify value of ""Test, Posting, Wordpress"" on label categories inside page that shows draft post preview
+",
+WPS_P_03,Delete a post by it's name,"- user must be logged as ""admin""
+- post must exist with the given name
+- user must be located at main dashboard page
+- left menu should not be collapsed
+- all screen options should be enabled","1.-Click button ""Posts"" inside left menu list
+2.- Click button ""Drafts"" inside content of the page
+3.- Fill ""Test"" insdie ""searh box"" field
+4.- Click on button ""Search Posts""
+5.- Select radio button from record with value ""Test"" in field title
+6.- Select option ""Move to Trash"" in list actions
+7.- Click button ""Apply""","1.- Verify value next ""All"" label have been reduced in 1
+2.- Verify value next ""Draft"" label have been reduced in 1
+3.- Verify value next ""Trash"" label have been increesed in 1
+",
+WPS_P_04,Delete a category by it's name,"- user must be logged as ""admin""
+- category must exist with the given name
+- user must be located at main dashboard page
+- left menu should not be collapsed
+- all screen options should be enabled","1.-Click button ""Posts"" inside left menu list
+2.- Click button ""Categories"" inside left menu list
+3.- Click radio buton from record that has value of ""Update"" in field ""name""
+4.- Select option ""Delete"" in list options
+5.- Click on button ""Apply""","1.- Verify that a block has been appeared with color #ffffe0
+2.- Verify that block contains a text like ""Items deleted.""
+3.- Verify value ""Update"" doesn't exist in field ""name""",
