@@ -34,6 +34,12 @@ public class DashBoardPage extends AbstractObjectPage {
     @FindBy(how= How.CSS, using="#menu-users>.wp-submenu>.wp-submenu-wrap>ul>li")
     List<WebElement> lstUsersOptions;
 
+    @FindBy(  how= How.ID, using="menu-links")
+    WebElement btnLinks;
+
+    @FindBy(how= How.CSS, using="#menu-links>.wp-submenu>.wp-submenu-wrap>ul>li")
+    List<WebElement> lstLinksOptions;
+
     public DashBoardPage(WebDriver webDriver)
     {
         super(webDriver);
@@ -59,6 +65,12 @@ public class DashBoardPage extends AbstractObjectPage {
             this.actionBuilder.moveToElement(this.btnUser).build().perform();
             this.simpleWaitInPage(2);
             this.accessToSubSection(this.lstUsersOptions,subSection);
+        }
+        else if(section.equals("Links"))
+        {
+            this.actionBuilder.moveToElement(this.btnLinks).build().perform();
+            this.simpleWaitInPage(2);
+            this.accessToSubSection(this.lstLinksOptions,subSection);
         }
     }
 

@@ -1,0 +1,18 @@
+Project Name:,WordPress Site,,,,
+Module Name:,Links,,,,
+Documentation:,-,,,,
+Created By:,Carlos Alejandro Zerga Morales,,,,
+Date of Creation:,28/06/2017,,,,
+Date of Revision:,28/06/2017,,,,
+Test Suite Code:,WPS_L,,,,
+Test Case ID,Summary,Pre-Condition,Test Steps,Expected Result,Priority
+WPS_L_01,Fail creating a category link with an existing data,"- user must be logged as ""admin""
+- user must be located at main dashboard page
+- category with the given values should not exist
+- left menu should not be collapsed
+- all screen options should be enabled","1.-Click button ""Links"" inside left menu list
+2.- Click button ""Link Categories"" inside left menu list
+3.- Fill ""Blogroll"" inside ""name"" field
+4.- Fill ""blogroll inside ""slug"" field
+5.- Click on button ""Add New Link Category""","1.- Verify that a block has been appeared with color #ffebe8
+2.- Verify that block contains a text like ""A term with the name provided already exists",

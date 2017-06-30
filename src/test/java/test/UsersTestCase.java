@@ -61,9 +61,12 @@ public class UsersTestCase {
     }
     @After
     public void tearDown() throws Exception {
-        //this.webDriver.quit();
+        this.webDriver.quit();
     }
 
+    /**
+     * CODE:WPS_U_01
+     */
     @Test
     public void testCreationExistingUser()
     {
@@ -73,6 +76,10 @@ public class UsersTestCase {
         assertEquals("#ffebe8",this.userEditPage.getErrorColor());
     }
 
+
+    /**
+     * CODE:WPS_U_02
+     */
     @Test
     public void testVeryWeakPassword()
     {
@@ -82,6 +89,10 @@ public class UsersTestCase {
         assertEquals("Very weak",this.userEditPage.getStrengthIndicatorLevel());
     }
 
+
+    /**
+     * CODE:WPS_U_03
+     */
     @Test
     public void testWeakPassword()
     {
@@ -90,6 +101,11 @@ public class UsersTestCase {
         assertEquals("#ffb78c",this.userEditPage.getStrengthIndicatorColor());
         assertEquals("Weak",this.userEditPage.getStrengthIndicatorLevel());
     }
+
+
+    /**
+     * CODE:WPS_U_04
+     */
     @Test
     public void testMediumPassword()
     {
@@ -98,6 +114,11 @@ public class UsersTestCase {
         assertEquals("#ffec8b",this.userEditPage.getStrengthIndicatorColor());
         assertEquals("Medium",this.userEditPage.getStrengthIndicatorLevel());
     }
+
+
+    /**
+     * CODE:WPS_U_05
+     */
     @Test
     public void testStrongPassword()
     {
